@@ -50,7 +50,7 @@ This is the frontend of a simple blog system built with React. It allows users t
 
 1. Clone the repository:
    ```
-   git clone <repository-url>
+   git clone https://github.com/ArikpoStanley/Ovaboss-blog.git
    cd frontend
    ```
 
