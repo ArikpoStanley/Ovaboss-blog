@@ -65,7 +65,7 @@ const Profile = () => {
       await AuthService.updateProfile(formData);
       setSuccess(true);
       setLoading(false);
-      window.location.href = "http://localhost:5173/dashboard"
+      navigate('/dashboard')
     } catch (error) {
       console.error('Error updating profile:', error);
       

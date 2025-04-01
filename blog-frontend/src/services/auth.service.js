@@ -1,6 +1,6 @@
 import axiosInstance from '../utils/axiosConfig';
 import Cookies from 'js-cookie'; // Make sure to install this package with: npm install js-cookie
-
+import { useAuth } from '../hooks/useAuth';
 const API_URL = 'http://localhost:8000';
 const USER_COOKIE_NAME = 'XSRF-TOKEN';
 const TOKEN_COOKIE_NAME = 'auth_token';
@@ -88,7 +88,8 @@ login: async (credentials) => {
   // Get current user from cookies
 getCurrentUser: () => {
   try {
-    const userStr = Cookies.get(USER_COOKIE_NAME);
+    const {user} = {useAuth}
+    const userStr = user
     // Debug line to see what's being retrieved
     console.log('Raw cookie value:', userStr);
     
