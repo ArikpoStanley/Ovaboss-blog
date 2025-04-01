@@ -178,16 +178,16 @@ const Profile = () => {
             <div className="bg-gray-50 p-4 rounded-md">
               <p className="text-sm text-gray-500">Account created</p>
               <p className="text-lg font-medium text-gray-800">
-                {AuthService.getCurrentUser()?.created_at 
-                  ? new Date(AuthService.getCurrentUser().created_at).toLocaleDateString() 
+                {user?.created_at 
+                  ? new Date(user?.created_at).toLocaleDateString() 
                   : 'N/A'}
               </p>
             </div>
             <div className="bg-gray-50 p-4 rounded-md">
               <p className="text-sm text-gray-500">Last updated</p>
               <p className="text-lg font-medium text-gray-800">
-                {AuthService.getCurrentUser()?.updated_at 
-                  ? new Date(AuthService.getCurrentUser().updated_at).toLocaleDateString() 
+                {user?.updated_at 
+                  ? new Date(user?.updated_at).toLocaleDateString() 
                   : 'N/A'}
               </p>
             </div>
