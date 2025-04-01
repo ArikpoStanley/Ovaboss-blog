@@ -1,4 +1,3 @@
-// src/pages/PostDetail.jsx
 import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { PostService} from '../services/post.service';
@@ -91,6 +90,8 @@ const PostDetail = () => {
     return <div className="text-center mt-10 text-red-500">{error || 'Post not found'}</div>;
   }
 
+  console.log(comments)
+
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-6">
@@ -171,8 +172,8 @@ const PostDetail = () => {
           <p className="text-gray-500">No comments yet. Be the first to comment!</p>
         ) : (
           <div className="space-y-4">
-            {comments?.map(comment => (
-              <div key={comment?.id} className="border-b pb-4">
+            {comments?.map((comment, index) => (
+              <div key={index} className="border-b pb-4">
                 <div className="flex justify-between items-start">
                   <div>
                     <p className="font-semibold">{comment?.user?.name}</p>
@@ -181,7 +182,7 @@ const PostDetail = () => {
                     </p>
                   </div>
                   
-                  {user && user.id === comment?.user_id && (
+                  {user && user.id === comment?.user?.id && (
                     <button
                       onClick={() => handleDeleteComment(comment?.id)}
                       className="text-red-500 text-sm hover:underline"
