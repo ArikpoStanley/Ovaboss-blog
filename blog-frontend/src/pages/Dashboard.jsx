@@ -61,9 +61,7 @@ const Dashboard = () => {
     }
   };
 
-  // Apply frontend filtering and pagination
   const applyFiltersAndPagination = (postsToFilter, authorName, page) => {
-    // First apply author filter if one is selected
     let filteredPosts = postsToFilter;
     if (authorName) {
       filteredPosts = postsToFilter.filter(post => post.user.name === authorName);
@@ -85,7 +83,6 @@ const Dashboard = () => {
   }, [search]); // Only refetch from API when search changes
 
   useEffect(() => {
-    // When author filter or page changes, just re-filter the existing data
     if (allPosts.length > 0) {
       applyFiltersAndPagination(allPosts, authorFilter, currentPage);
       
