@@ -60,7 +60,7 @@ const PostDetail = () => {
     }
 
     try {
-      await CommentService.deleteComment(`/comments/${commentId}`);
+      await CommentService.deleteComment(`${commentId}`);
       setComments(comments.filter(comment => comment.id !== commentId));
     } catch (err) {
       setCommentError('Failed to delete comment');
@@ -74,7 +74,7 @@ const PostDetail = () => {
     }
 
     try {
-      await PostService.deletePost(`/posts/${id}`);
+      await PostService.deletePost(`${id}`);
       navigate('/dashboard');
     } catch (err) {
       setError('Failed to delete post');

@@ -62,7 +62,8 @@ const Profile = () => {
     
     setLoading(true);
     try {
-      await AuthService.updateProfile(formData);
+     const res =  await AuthService.updateProfile(formData);
+      console.log(res)
       setSuccess(true);
       setLoading(false);
       navigate('/dashboard')
