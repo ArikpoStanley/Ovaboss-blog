@@ -89,9 +89,6 @@ const PostDetail = () => {
   if (error || !post) {
     return <div className="text-center mt-10 text-red-500">{error || 'Post not found'}</div>;
   }
-
-  console.log(comments)
-
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-6">
