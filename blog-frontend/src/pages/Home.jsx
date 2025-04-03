@@ -101,7 +101,7 @@ const Home = () => {
             />
             <button
               type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded-r"
+              className="bg-indigo-600 cursor-pointer text-white px-4 py-2 rounded-r"
             >
               Search
             </button>
@@ -153,7 +153,7 @@ const Home = () => {
               <div className="flex justify-between">
                 <Link 
                   to={`/posts/${post.id}`} 
-                  className="text-blue-500 hover:underline"
+                  className="text-indigo-600 hover:underline"
                 >
                   Read more
                 </Link>

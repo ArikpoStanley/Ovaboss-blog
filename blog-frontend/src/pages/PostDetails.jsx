@@ -44,10 +44,10 @@ const PostDetail = () => {
     try {
       console.log(commentText)
       const response = await CommentService.addComment(`${id}`, commentText);
-      
+    console.log(response?.data)
       // Add the new comment to the list
-      setComments([...comments, response.data.comment]);
-      setCommentText('');
+      setComments([...comments, response?.data]);
+      // setCommentText('');
     } catch (err) {
       setCommentError('Failed to post comment');
       console.error(err);
@@ -157,7 +157,7 @@ const PostDetail = () => {
             </div>
             <button
               type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+              className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
             >
               Post Comment
             </button>
@@ -185,7 +185,7 @@ const PostDetail = () => {
                   {user && user.id === comment?.user?.id && (
                     <button
                       onClick={() => handleDeleteComment(comment?.id)}
-                      className="text-red-500 text-sm hover:underline"
+                      className="text-red-500 text-sm cursor-pointer border px-2 rounded-xl"
                     >
                       Delete
                     </button>

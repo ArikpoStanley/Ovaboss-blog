@@ -153,7 +153,7 @@ const Dashboard = () => {
           <h1 className="text-2xl font-bold text-gray-800">My Dashboard</h1>
           <Link
             to="/create-post"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-300"
+            className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md transition duration-300"
           >
             Create New Post
           </Link>
